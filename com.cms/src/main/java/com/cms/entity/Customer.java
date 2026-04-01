@@ -6,9 +6,9 @@ import jakarta.persistence.Id;
 @Entity
 public class Customer {
 	@Id
-	Long id;
-	String username;
-	String password;
+	private Long id;
+	private String username;
+	private String password;
 	
 	public Customer() {
 		

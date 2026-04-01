@@ -7,4 +7,6 @@ import com.cms.entity.Customer;
 public interface CustomerRepository 
 	extends JpaRepository<Customer, Long>{
 
+	Customer findByUsername(String uName);
+
 }

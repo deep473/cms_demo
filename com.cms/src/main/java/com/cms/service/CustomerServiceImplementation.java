@@ -22,8 +22,17 @@ public class CustomerServiceImplementation
 
 	@Override
 	public String addUser(Customer cus) {
-		cusRepo.save(cus);
-		return "user added successfully!";
+		//check username exists or not
+		String uName = cus.getUsername();
+		Customer dbCus = cusRepo.findByUsername(uName);
+		boolean exists = (dbCus != null);
+		
+		if(exists == true)
+			return "username already exists!";
+		else {
+			cusRepo.save(cus);
+			return "user added successfully!";
+		}
 	}
 
 }
