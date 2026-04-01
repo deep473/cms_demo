@@ -6,7 +6,7 @@ import com.cms.repository.CustomerRepository;
 
 @Service
 public class CustomerServiceImplementation 
-implements CustomerService{
+					implements CustomerService{
 
 	CustomerRepository cusRepo;
 	
@@ -18,6 +18,12 @@ implements CustomerService{
 	public boolean validate(Customer cus) {
 		String dbPass = cusRepo.findById(cus.getId()).get().getPassword();
 		return cus.getPassword().equals(dbPass);
+	}
+
+	@Override
+	public String addUser(Customer cus) {
+		cusRepo.save(cus);
+		return "user added successfully!";
 	}
 
 }

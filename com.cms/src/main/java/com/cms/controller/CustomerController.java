@@ -19,9 +19,15 @@ public class CustomerController {
 	
 	@PostMapping("/login")
 	public String login(@RequestBody Customer cus) {
+//		System.out.println(cus);
 		if(cService.validate(cus))
 			return "login success!";
 		else
 			return "login fail";
+	}
+	
+	@PostMapping("/register")
+	public String register(@RequestBody Customer cus) {
+		return cService.addUser(cus);
 	}
 }

@@ -9,9 +9,9 @@ public class Customer {
 	Long id;
 	String username;
 	String password;
+	
 	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Customer(Long id, String username, String password) {
 		super();
